@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { OpsetteFooterLogo } from '@/components/opsette-share';
+import { DeeBuiltCredit } from '@/components/DeeBuiltCredit';
 
 export default function About() {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function About() {
 
         <h1 className="text-xl font-bold tracking-tight text-foreground mb-2">About QR Creator</h1>
         <p className="text-sm text-muted-foreground mb-6">
-          A business tool from Opsette Marketplace.
+          A free tool from DeeBuilt.
         </p>
 
         <div className="space-y-5 text-sm text-foreground/80 leading-relaxed">
@@ -47,7 +47,9 @@ export default function About() {
 
         </div>
 
-        <OpsetteFooterLogo />
+        <div className="mt-8 text-center">
+          <DeeBuiltCredit />
+        </div>
       </main>
     </div>
   );

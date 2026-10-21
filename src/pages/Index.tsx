@@ -12,7 +12,8 @@ import { FolderOpen } from 'lucide-react';
 import { useQRLibrary } from '@/hooks/useQRLibrary';
 import { toast } from '@/hooks/use-toast';
 import { DEFAULT_CONFIG, type QRConfig } from '@/types/qr';
-import { OpsetteHeader } from '@/components/opsette-header';
+import { AppHeader } from '@/components/AppHeader';
+import { DeeBuiltCredit } from '@/components/DeeBuiltCredit';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
 import { readSeedFromUrl, clearLinkParams } from '@/lib/opsette-kit-link';
 import {
@@ -101,7 +102,7 @@ export default function Index() {
       {embedded ? (
         <EmbedSaveBar onSave={() => void saveToBrandBoard()} saving={saving} />
       ) : (
-        <OpsetteHeader rightExtra={<ThemeToggleButton />} />
+        <AppHeader actions={<ThemeToggleButton />} />
       )}
 
       <main className="mx-auto max-w-4xl px-4 py-4 pb-8">
@@ -165,12 +166,7 @@ export default function Index() {
           <span className="text-muted-foreground/40">·</span>
           <button onClick={() => navigate('/privacy')} className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy</button>
           <span className="text-muted-foreground/40">·</span>
-          <span className="text-xs text-muted-foreground">
-            By{' '}
-            <a href="https://opsette.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">
-              Opsette
-            </a>
-          </span>
+          <DeeBuiltCredit />
         </footer>
         )}
       </main>

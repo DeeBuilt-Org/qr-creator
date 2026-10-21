@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-// Prevent PWA service worker registration inside iframes (e.g. Opsette embed)
+// Prevent PWA service worker registration inside iframes (e.g. a Brand Board embed)
 const isInIframe = (() => {
   try {
     return window.self !== window.top;

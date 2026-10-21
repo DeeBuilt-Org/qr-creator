@@ -56,7 +56,7 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Canonical Opsette dark surface tokens — see HEADER_BAR.md.
+    /* Dark surface tokens.
        Page #000, surfaces #141414, borders #303030, fg 95%/65% white. */
     --background: 0 0% 0%;
     --foreground: 0 0% 95%;

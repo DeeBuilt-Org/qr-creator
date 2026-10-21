@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { OpsetteFooterLogo } from '@/components/opsette-share';
+import { DeeBuiltCredit } from '@/components/DeeBuiltCredit';
 
 export default function Privacy() {
   const navigate = useNavigate();
@@ -40,7 +40,9 @@ export default function Privacy() {
 
         </div>
 
-        <OpsetteFooterLogo />
+        <div className="mt-8 text-center">
+          <DeeBuiltCredit />
+        </div>
       </main>
     </div>
   );

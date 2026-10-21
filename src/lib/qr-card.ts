@@ -143,7 +143,7 @@ export async function renderQRCardBlob(
   ctx.fillStyle = muted;
   ctx.textAlign = 'center';
   ctx.font = '500 18px system-ui, -apple-system, Segoe UI, sans-serif';
-  ctx.fillText('Made with Opsette', CARD_W / 2, CARD_H - 34);
+  ctx.fillText('Made with DeeBuilt', CARD_W / 2, CARD_H - 34);
 
   return new Promise<Blob>((resolve, reject) => {
     canvas.toBlob(

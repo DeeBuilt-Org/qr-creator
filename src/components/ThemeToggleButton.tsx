@@ -6,9 +6,7 @@ import { useTheme } from "@/hooks/use-theme";
  * dark. Reads/writes the same module-level theme state as `useTheme()` so
  * every consumer (header, this button, the rest of the app) stays in sync.
  *
- * Drop into <OpsetteHeader rightExtra={<ThemeToggleButton />} />.
- *
- * Spec: c:\Opsette Tools\HEADER_BAR.md
+ * Drop into <AppHeader actions={<ThemeToggleButton />} />.
  */
 export function ThemeToggleButton(): React.ReactElement {
   const { theme, toggle } = useTheme();

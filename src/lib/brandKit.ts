@@ -98,7 +98,7 @@ const payloadSchema = z.object({
 });
 
 // Parse a pasted blob back into a reopenable QRConfig. Returns null (never
-// throws) for anything that isn't a valid Opsette QR blob. Merges onto
+// throws) for anything that isn't a valid kit QR blob. Merges onto
 // DEFAULT_CONFIG so every field is present and typed after reopen.
 export function fromKitJson(raw: string): QRConfig | null {
   let parsed: unknown;
