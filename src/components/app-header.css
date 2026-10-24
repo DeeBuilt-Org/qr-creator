@@ -1,64 +1,63 @@
 /**
- * QR Creator header.
+ * QR Creator header lockup.
  *
  * Surface, text and border read the app's shadcn tokens (--card,
- * --card-foreground, --border), so html.dark flips them with the rest of the
- * app. The mark color and spacing live in the --app-header-* variables.
+ * --card-foreground, --border, --muted-foreground), so html.dark flips them
+ * with the rest of the app. The tile keeps its color in both themes: it
+ * carries the brand color, the name carries the type.
  */
-:root {
-  --app-header-accent: #2f4f46;
-  --app-header-pad: 20px;
-  --app-header-gap: 16px;
-}
-
-html.dark {
-  --app-header-accent: #cfae60;
-}
-
-@media (max-width: 640px) {
-  :root {
-    --app-header-pad: 16px;
-    --app-header-gap: 12px;
-  }
-}
-
 .app-header {
+  --ops-header-tile-bg: var(--ops-green);
+
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: var(--app-header-gap);
-  height: 60px;
-  padding: 0 var(--app-header-pad);
+  gap: var(--ops-space-lg);
+  height: var(--ops-header-h);
+  padding: 0 var(--ops-page-pad);
   background: hsl(var(--card));
   color: hsl(var(--card-foreground));
   border-bottom: 1px solid hsl(var(--border));
   box-sizing: border-box;
 }
 
-.app-header__title {
+.app-header__lockup {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--ops-space-sm);
   flex: 1 1 auto;
   min-width: 0; /* allow the name to truncate on narrow phones */
-  color: var(--app-header-accent);
 }
 
-.app-header__mark {
-  width: 22px;
-  height: 22px;
+/* The mark sits on a small colored tile, like an app icon. */
+.app-header__tile {
   flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ops-header-tile-size);
+  height: var(--ops-header-tile-size);
+  border-radius: var(--ops-header-tile-radius);
+  background: var(--ops-header-tile-bg);
+  color: #fff;
+  font-size: var(--ops-header-mark);
+}
+
+.app-header__tile svg {
+  width: var(--ops-header-mark);
+  height: var(--ops-header-mark);
 }
 
 .app-header__name {
   margin: 0;
-  font-size: clamp(18px, 5vw, 20px);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  color: inherit;
+  font-family: var(--ops-font-display);
+  font-size: var(--ops-fs-wordmark);
+  font-weight: var(--ops-fw-display);
+  letter-spacing: var(--ops-tracking-display);
+  line-height: 1;
+  color: hsl(var(--card-foreground));
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,6 +66,34 @@ html.dark {
 .app-header__actions {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--ops-space-sm);
   flex: 0 0 auto;
+}
+
+/* Header icon buttons (theme toggle): one size, muted until hover. Icons draw
+   at 1em, so their size comes from font-size here. */
+.app-header__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ops-control-icon);
+  height: var(--ops-control-icon);
+  padding: 0;
+  border: 0;
+  border-radius: var(--ops-header-tile-radius);
+  background: transparent;
+  color: hsl(var(--muted-foreground));
+  font-size: var(--ops-icon-chrome);
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.app-header__btn:hover {
+  color: hsl(var(--foreground));
+  background: hsl(var(--muted));
+}
+
+.app-header__btn:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
 }

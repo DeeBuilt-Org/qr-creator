@@ -1,0 +1,45 @@
+/**
+ * Design tokens for QR Creator's chrome.
+ *
+ * The DeeBuilt tools design system (opsette-tools.github.io/docs/
+ * DEEBUILT-TOOLS-MIGRATION.md): Bodoni Moda for names and titles, Lato for
+ * everything you read or click. Colors stay on the shadcn tokens in
+ * index.css (which flip under html.dark); these carry type and chrome sizing.
+ * tailwind.config.ts reads the family and weight tokens, so every Tailwind
+ * class (font-sans, font-medium, font-semibold…) lands on them.
+ *
+ * The downloadable QR card (lib/qr-card.ts) draws in system-ui and never
+ * reads these.
+ */
+:root {
+  /* ---- Type families ----------------------------------------------------- */
+  --ops-font-display: "Bodoni Moda", "Didot", Georgia, serif;
+  --ops-font-ui: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* ---- Font weights ------------------------------------------------------ */
+  /* Lato ships 400 and 700 only, so the UI has exactly two weights. Bodoni
+     Moda is variable; every display title uses the one display weight. */
+  --ops-fw-regular: 400;
+  --ops-fw-bold: 700;
+  --ops-fw-display: 600;
+  --ops-tracking-display: -0.01em;
+
+  --ops-fs-nav: 14px;
+  --ops-fs-wordmark: clamp(22px, 5.6vw, 26px);
+
+  /* ---- Chrome ------------------------------------------------------------ */
+  --ops-green: #2f4f46;
+  --ops-header-h: 56px;
+  --ops-header-tile-size: 28px;
+  --ops-header-tile-radius: 7px;
+  --ops-header-mark: 18px;
+  --ops-control-icon: 36px;
+  --ops-icon-chrome: 20px;
+  --ops-icon-nav: 18px;
+  --ops-nav-item-h: 36px;
+  --ops-nav-gap: 10px;
+  --ops-space-sm: 8px;
+  --ops-space-md: 12px;
+  --ops-space-lg: 16px;
+  --ops-page-pad: clamp(16px, 4vw, 20px);
+}

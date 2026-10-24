@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
+import "./styles/tokens.css";
 import "./index.css";
 
 // Prevent PWA service worker registration inside iframes (e.g. a Brand Board embed)

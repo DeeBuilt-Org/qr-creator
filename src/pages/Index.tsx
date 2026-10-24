@@ -12,7 +12,7 @@ import { FolderOpen } from 'lucide-react';
 import { useQRLibrary } from '@/hooks/useQRLibrary';
 import { toast } from '@/hooks/use-toast';
 import { DEFAULT_CONFIG, type QRConfig } from '@/types/qr';
-import { AppHeader } from '@/components/AppHeader';
+import { AppHeader, QrMark } from '@/components/AppHeader';
 import { DeeBuiltCredit } from '@/components/DeeBuiltCredit';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
 import { readSeedFromUrl, clearLinkParams } from '@/lib/opsette-kit-link';
@@ -102,7 +102,7 @@ export default function Index() {
       {embedded ? (
         <EmbedSaveBar onSave={() => void saveToBrandBoard()} saving={saving} />
       ) : (
-        <AppHeader actions={<ThemeToggleButton />} />
+        <AppHeader mark={<QrMark />} name="QR Creator" actions={<ThemeToggleButton />} />
       )}
 
       <main className="mx-auto max-w-4xl px-4 py-4 pb-8">

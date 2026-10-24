@@ -13,6 +13,19 @@ export default {
       },
     },
     extend: {
+      // The DeeBuilt tools type system (src/styles/tokens.css). Lato ships 400
+      // and 700 only, so the in-between weights land on those two: medium on
+      // regular, semibold on bold — what the browser was already rounding to,
+      // now stated once here instead of in every component.
+      fontFamily: {
+        sans: ["var(--ops-font-ui)"],
+      },
+      fontWeight: {
+        normal: "var(--ops-fw-regular)",
+        medium: "var(--ops-fw-regular)",
+        semibold: "var(--ops-fw-bold)",
+        bold: "var(--ops-fw-bold)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
